@@ -44,10 +44,11 @@ export default class Touch extends Component {
     }
 
     render(){
-        const {style,content} = this.props
+        const {style,content,hitSlop} = this.props
         return(
             <TouchableOpacity
                 disabled={this.state.isDisable}
+                hitSlop={hitSlop?hitSlop:{}}
                 activeOpacity={this.props.activeOpacity?this.props.activeOpacity:0.5}
                 style={style?style:{}}
                 onPress={this.ToPress}>
